@@ -1,15 +1,21 @@
-## Put comments here that give an overall description of what your
-## functions do
+## The project does the invers of a given matrix
+## Create matrix and Inverse the matrix
 
 ## Write a short comment describing this function
 
-makeCacheMatrix <- function(x = matrix()) {
-
+makeCacheMatrix <- function(x = matrix(data, nrow, ncol, byrow = TRUE)) {
+  matrix(data, nrow, ncol, byrow = TRUE)
 }
 
 
-## Write a short comment describing this function
+## The inverse of a matrix
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  library(MASS)
+  inv <- ginv(x)
+  inv %*% x
+  zapsmall(inv %*% x)
+  ## Return a matrix that is the inverse of 'x'
 }
+
+
